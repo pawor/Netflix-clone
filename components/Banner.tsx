@@ -39,7 +39,7 @@ function Banner({netflixOriginals}:Props) {
                     <FaPlay className='w-4 h-4 text-black md:h-7 md:w-7'/>Play
                 </button>
                 <button className='bannerButton bg-[gray]/70'>
-                    More Info <InformationCircleIcon className='w-5 h-5 text-black md:h-8 md:w-8'/>
+                    More Info<InformationCircleIcon className='w-5 h-5 text-black md:h-8 md:w-8'/>
                 </button>
             </div>
         </div>
