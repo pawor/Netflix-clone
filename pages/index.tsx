@@ -25,8 +25,8 @@ const Home = ({netflixOriginals,actionMovies,comedyMovies,documentaries,horrorMo
       
       <Header />
       
-      <main>
-        <Banner />
+      <main className='relative pb-24 pl-4 lg:space-y-24 lg:pl-16'>
+        <Banner netflixOriginals={netflixOriginals}/>
         <section></section>
       </main>
 
