@@ -27,7 +27,6 @@ function Row({title,movies}:Props) {
         }
     }
     
-    console.log(rowRef.current!.scrollLeft, rowRef.current!.clientWidth)
     
     return (
         <div className='h-40 space-y-0.5 md:space-y-2'>
@@ -45,7 +44,7 @@ function Row({title,movies}:Props) {
                 </div>
                 
                 <ChevronRightIcon 
-                    className={`absolute top-0 bottom-0 z-40 m-auto transition opacity-0 cursor-pointer right-2 h-9 w-9 hover:scale-125 group-hover:opacity-100 ${!isMoved}`}
+                    className="absolute top-0 bottom-0 z-40 m-auto transition opacity-0 cursor-pointer right-2 h-9 w-9 hover:scale-125 group-hover:opacity-100"
                     onClick={() => handleClick("right")}
                 />
             </div>
