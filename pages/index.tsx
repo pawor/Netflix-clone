@@ -4,6 +4,10 @@ import Banner from '../components/Banner'
 import requests from '../utils/requests'
 import { Movie } from '../typings'
 import Row from '../components/Row'
+import useAuth from '../hooks/useAuth'
+import { modalState } from '../atoms/modalAtom'
+import { useRecoilValue } from 'recoil'
+import Modal from '../components/Modal'
 
 
 interface Props {
@@ -19,8 +23,13 @@ interface Props {
 
 
 const Home = ({netflixOriginals,actionMovies,comedyMovies,documentaries,horrorMovies,romanceMovies,topRated,trendingNow}:Props) => {
+  const { loading } = useAuth()
+  const showModal = useRecoilValue(modalState)
+
+  if(loading) return null
+  
   return (
-    <div className='relative h-screen bg-gradient-to-b lg:h-[140vh]'>
+    <div className={`relative h-screen bg-gradient-to-b lg:h-[140vh] ${showModal && '!h-screen overflow-hidden'}`}>
       <Head>
         <title>Home - Netflix</title>
         <link rel="icon" href="/favicon.ico" />
@@ -40,6 +49,7 @@ const Home = ({netflixOriginals,actionMovies,comedyMovies,documentaries,horrorMo
           <Row title='Documentaries' movies={documentaries} />
         </section>
       </main>
+      {showModal && <Modal />}
 
     </div>
   )

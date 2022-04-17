@@ -23,4 +23,7 @@
     .input {
         @apply w-full rounded bg-[#333] px-5 py-3.5 placeholder-[gray] outline-none focus:bg-[#454545];
     }
+    .modalButton{
+        @apply flex items-center justify-center border-[gray] border-2 rounded-full h-11 w-11 bg-[#2a2a2a]/60 transition hover:border-white hover:bg-white/10;
+    }
 }
